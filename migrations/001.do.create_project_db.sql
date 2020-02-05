@@ -1,5 +1,5 @@
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE TYPE type AS ENUM ('a', 'b', 'c', 'd', 'e');
+CREATE TYPE type AS ENUM ('Physical', 'Literacy', 'Art', 'Sensory', 'Science', '');
 CREATE TYPE age AS ENUM ('0-12m', '13-24m', '25-36m');
 CREATE TABLE babytivities_users (
   id uuid DEFAULT uuid_generate_v4 (),
