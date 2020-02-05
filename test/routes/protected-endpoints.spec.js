@@ -42,13 +42,14 @@ describe.skip(`Protected endpoints`, function() {
       method: supertest(app).get
     },
     {
-      name: "POST /api/favorites/:favorites_id",
-      path: "/api/favorites/FAVORITE ID GOES HERE",
+      name: "POST /api/favorites/",
+      path: "/api/favorites/",
       method: supertest(app).post
     },
     {
-      name: "DELETE /api/favorites/:favorites_id",
-      path: "/api/favorites/FAVORITE ID GOES HERE"
+      name: "DELETE /api/favorites/",
+      path: "/api/favorites/",
+      method: supertest(app).delete
     }
   ];
 
