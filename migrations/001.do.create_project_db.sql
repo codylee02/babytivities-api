@@ -1,5 +1,12 @@
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE TYPE type AS ENUM ('Physical', 'Literacy', 'Art', 'Sensory', 'Science', '');
+CREATE TYPE type AS ENUM (
+  'Physical',
+  'Literacy',
+  'Art',
+  'Sensory',
+  'Science',
+  ''
+);
 CREATE TYPE age AS ENUM ('0-12m', '13-24m', '25-36m');
 CREATE TABLE babytivities_users (
   id uuid DEFAULT uuid_generate_v4 (),
@@ -22,8 +29,8 @@ CREATE TABLE babytivities_activities (
 );
 CREATE TABLE babytivities_favorites (
   id uuid DEFAULT uuid_generate_v4 (),
-  user_id uuid REFERENCES babytivities_users(id) ON DELETE CASCADE,
-  activity_id uuid REFERENCES babytivities_activities(id) ON DELETE CASCADE,
+  user_id uuid REFERENCES babytivities_users(id) ON DELETE CASCADE NOT NULL,
+  activity_id uuid REFERENCES babytivities_activities(id) ON DELETE CASCADE NOT NULL,
   date_created TIMESTAMP NOT NULL DEFAULT now(),
   PRIMARY KEY (id)
 );
