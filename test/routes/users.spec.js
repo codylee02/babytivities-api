@@ -127,7 +127,7 @@ describe("Users Endpoints", function() {
           .expect(400, { error: `Username already taken` });
       });
     });
-    context(`Happy path`, () => {
+    context(`Happy path`, function() {
       it(`responds 201, serialized user, storing bcrypted password`, () => {
         this.retries(100);
         const newUser = {

@@ -40,17 +40,17 @@ describe(`Protected endpoints`, function() {
       name: "GET /api/favorites",
       path: "/api/favorites",
       method: supertest(app).get
+    },
+    {
+      name: "POST /api/favorites/",
+      path: "/api/favorites/",
+      method: supertest(app).post
+    },
+    {
+      name: "DELETE /api/favorites/",
+      path: "/api/favorites/",
+      method: supertest(app).delete
     }
-    // {
-    //   name: "POST /api/favorites/",
-    //   path: "/api/favorites/",
-    //   method: supertest(app).post
-    // },
-    // {
-    //   name: "DELETE /api/favorites/",
-    //   path: "/api/favorites/",
-    //   method: supertest(app).delete
-    // }
   ];
 
   protectedEndpoints.forEach(endpoint => {

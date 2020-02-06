@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const service = require("./service");
 const { requireAuth } = require("../../middleware/jwt-auth");
 
@@ -17,7 +16,7 @@ router
         if (favorites.length === 0) {
           return res.status(204).end();
         }
-        res.json(favorites);
+        res.status(200).json(favorites);
         next();
       })
       .catch(next);
