@@ -80,7 +80,7 @@ function makeActivitiesArray() {
       type: "Sensory",
       instructions:
         "Next time you are at the supermarket, pick up a few helium balloons (the mylar ones are best-less of a choking hazard). When you are home, lay your baby on the floor on their back, and gently tie the balloons to their wrists and ankles. Stand by and watch as your little one sees how the balloons bounce in the air as their hands and feet move.",
-      age: "0-12m",
+      age: "7-12m",
       date_created: "2019-11-06 22:26:24.065662"
     },
     {

@@ -4,12 +4,18 @@ CREATE TYPE type AS ENUM (
   'Literacy',
   'Art',
   'Sensory',
-  'Science',
-  ''
+  'Science'
 );
-CREATE TYPE age AS ENUM ('0-12m', '13-24m', '25-36m');
+CREATE TYPE age AS ENUM (
+  '0-3m',
+  '4-6m',
+  '7-12m',
+  '13-24m',
+  '25-36m',
+  '36m+'
+);
 CREATE TABLE babytivities_users (
-  id uuid DEFAULT uuid_generate_v4 (),
+  id uuid DEFAULT uuid_generate_v4 () UNIQUE,
   username TEXT NOT NULL UNIQUE,
   first_name TEXT NOT NULL,
   last_name TEXT NOT NULL,
@@ -18,7 +24,7 @@ CREATE TABLE babytivities_users (
   PRIMARY KEY (id)
 );
 CREATE TABLE babytivities_activities (
-  id uuid DEFAULT uuid_generate_v4 (),
+  id uuid DEFAULT uuid_generate_v4 () UNIQUE,
   title TEXT NOT NULL,
   instructions TEXT NOT NULL,
   image TEXT,
@@ -28,14 +34,14 @@ CREATE TABLE babytivities_activities (
   PRIMARY KEY (id)
 );
 CREATE TABLE babytivities_favorites (
-  id uuid DEFAULT uuid_generate_v4 (),
+  id uuid DEFAULT uuid_generate_v4 () UNIQUE,
   user_id uuid REFERENCES babytivities_users(id) ON DELETE CASCADE NOT NULL,
   activity_id uuid REFERENCES babytivities_activities(id) ON DELETE CASCADE NOT NULL,
   date_created TIMESTAMP NOT NULL DEFAULT now(),
   PRIMARY KEY (id)
 );
 CREATE TABLE babytivities_materials (
-  id uuid DEFAULT uuid_generate_v4 (),
+  id uuid DEFAULT uuid_generate_v4 () UNIQUE,
   item TEXT NOT NULL,
   activity_id uuid REFERENCES babytivities_activities(id) ON DELETE CASCADE,
   PRIMARY KEY (id)
