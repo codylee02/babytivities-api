@@ -1,26 +1,42 @@
-# Express Boilerplate!
+## PAKD server
 
-This is a boilerplate project used for starting new projects!
+This server provides the database and API endpoints for the PAKD client.
 
-## Set up
+## Client:
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+[Babytivities client (GitHub)](https://github.com/codylee02/babytivities-api)
 
-1. Clone this repository to your local machine `git clone https://github.com/codylee02/express-boilerplate.git NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+## Tech / Framework Used:
 
-## Scripts
+- Express
+- PostgreSQL
 
-Start the application `npm start`
+## Endpoints
 
-Start nodemon for the application `npm run dev`
+### /login
 
-Run the tests `npm test`
+### /activities
 
-## Deploying
+- .get
 
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+  Returns an array of activity objects
+
+### /activities/:activity_id
+
+- .get
+
+  Returns an activity object
+
+### /favorites - Requires Auth
+
+- .get
+
+  Returns an array of user's favorites with the activity id they're associated with.
+
+- .post
+
+  Posts a new favorite
+
+- .delete
+
+  Removes a user's favorite. Requires favorite id in req.body. Ex: {id: [FAVORITE_ID]}
