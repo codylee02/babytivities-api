@@ -3,7 +3,7 @@
 This server provides the database and API endpoints for the PAKD client.
 
 ## Client:
-
+[Live Page]: [Babytivities](https://babytivities-app.now.sh/)
 [Babytivities client (GitHub)](https://github.com/codylee02/babytivities-react)
 
 ## Tech / Framework Used:
