@@ -13,9 +13,6 @@ router
     service
       .getFavorites(req.app.get("db"), userId)
       .then(favorites => {
-        if (favorites.length === 0) {
-          return res.status(204);
-        }
         res.status(200).json(favorites);
         next();
       })

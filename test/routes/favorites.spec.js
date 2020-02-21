@@ -63,13 +63,13 @@ describe("Favorites endpoint", function() {
     });
 
     context(`Given the user has no favorites`, () => {
-      it(`responds 204`, () => {
+      it(`responds resolves to an 200`, () => {
         const testUser = testUsers[1];
 
         return supertest(app)
           .get(endpoint)
           .set("Authorization", helpers.makeAuthHeader(testUser))
-          .expect(204);
+          .expect(200);
       });
     });
   });
