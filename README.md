@@ -1,4 +1,4 @@
-## PAKD server
+## Babytivities Server
 
 This server provides the database and API endpoints for the PAKD client.
 
