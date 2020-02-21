@@ -5,7 +5,7 @@ This server provides the database and API endpoints for the Babytivities client.
 ## Client:
 
 Live Page: [Babytivities](https://babytivities-app.now.sh/)
-GitHub: [Babytivities clien](https://github.com/codylee02/babytivities-react)
+GitHub: [Babytivities Client](https://github.com/codylee02/babytivities-react)
 
 ## Tech / Framework Used:
 
