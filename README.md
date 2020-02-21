@@ -1,6 +1,6 @@
 ## Babytivities Server
 
-This server provides the database and API endpoints for the PAKD client.
+This server provides the database and API endpoints for the Babytivities client.
 
 ## Client:
 [Live Page]: [Babytivities](https://babytivities-app.now.sh/)
